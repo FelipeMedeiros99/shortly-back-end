@@ -8,7 +8,7 @@ RotaTeste.get("/teste", async (req, res)=>{
     db.connect()
     try{
         console.log("solicitando dados")
-        const resposta = await db.query(`SELECT * FROM usuarios`);
+        const resposta = await db.query(`SELECT * FROM usuario`);
         console.log("enviando dados ao usuario")
         res.status(200).send(resposta);
 
