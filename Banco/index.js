@@ -5,16 +5,17 @@ import dotenv from "dotenv"
 dotenv.config()
 
 // vars
-const {host, port, user, password, database} = process.env;
+const {HOST: host, PORT: port, USER:user, PASSWORD:password, DATABASE:database} = process.env;
 
 const { Pool } = pg;
 
 const db = new Pool({
     host,
-    port,
+    port: Number(port),
     user,
     password,
     database
 });
 
 export default db;
+
