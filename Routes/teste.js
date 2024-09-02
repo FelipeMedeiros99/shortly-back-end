@@ -1,8 +1,8 @@
-import express from "express";
+import {Router} from "express";
 
 import db from "../Banco/index.js";
 
-const RotaTeste = express();
+const RotaTeste = Router();
 
 RotaTeste.get("/teste", async (req, res)=>{
     try{
