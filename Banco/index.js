@@ -10,7 +10,8 @@ const {LINK_BANCO:linkBanco} = process.env;
 const { Pool } = pg;
 
 const db = new Pool({
-    connectionString: linkBanco
+    connectionString: linkBanco,
+    ssl: { rejectUnauthorized: false } 
 });
 
 export default db;
