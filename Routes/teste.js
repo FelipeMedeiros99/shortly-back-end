@@ -18,7 +18,7 @@ RotaTeste.get("/teste", async (req, res)=>{
         res.status(404).send(`Erro ao tentar se conectar: ${e}`);
     }finally{
         console.log("finalizando requisição");
-        db.end()
+        await db.end()
     }
 });
 
