@@ -1,6 +1,6 @@
 import express from "express";
 
-import db from "../Banco";
+import db from "../Banco/index.js";
 
 const RotaTeste = express();
 

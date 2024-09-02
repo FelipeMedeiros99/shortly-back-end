@@ -2,7 +2,7 @@ import express, {json} from 'express';
 import cors from "cors";
 
 // local
-import RotaTeste from './Routes/teste';
+import RotaTeste from './Routes/teste.js';
 
 const App = express();
 
