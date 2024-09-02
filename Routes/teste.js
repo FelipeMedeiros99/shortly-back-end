@@ -6,9 +6,12 @@ const RotaTeste = Router();
 
 RotaTeste.get("/teste", async (req, res)=>{
     try{
-        await db.connect();
         console.log("solicitando requisição...")
+        console.log("tentando conectar ao banco")
+        await db.connect();
+        console.log("solicitando dados")
         const resposta = await db.query(`SELECT * FROM usuarios`);
+        console.log("enviando dados ao usuario")
         res.sendStatus(200).send(resposta);
 
     }catch(e){
