@@ -5,16 +5,12 @@ import dotenv from "dotenv"
 dotenv.config()
 
 // vars
-const {HOST: host, PORT: port, USER:user, PASSWORD:password, DATABASE:database} = process.env;
+const {LINK_BANCO:linkBanco} = process.env;
 
 const { Pool } = pg;
 
 const db = new Pool({
-    host,
-    port: Number(port),
-    user,
-    password,
-    database
+    connectionString: linkBanco
 });
 
 export default db;
