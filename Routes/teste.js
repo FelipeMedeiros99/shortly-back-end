@@ -7,7 +7,6 @@ const RotaTeste = Router();
 dotenv.config()
 
 RotaTeste.get("/teste", async (req, res)=>{
-    db.connect()
     try{
         console.log("solicitando dados")
         const resposta = await db.query(process.env.QUERY);
@@ -16,9 +15,6 @@ RotaTeste.get("/teste", async (req, res)=>{
 
     }catch(e){
         res.status(404).send(`Erro ao tentar se conectar: ${e}`);
-    }finally{
-        console.log("finalizando requisição");
-        await db.end()
     }
 });
 
