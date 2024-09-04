@@ -5,15 +5,18 @@ import { Router } from "express";
 import buscarUsuarioNoBancoMiddleware from "../Middlewares/buscarUsuarioNoBancoMiddleware.js"
 import validacaoDadosLoginMiddleware from "../Middlewares/validacaoDadosLoginMiddleware.js";
 import validarSenhaMiddleware from "../Middlewares/validarSenhaMiddleware.js";
+import signInController from "../Controllers/signInController.js";
+import criarTokenUsuarioMiddleware from "../Middlewares/criarTokenUsuarioMiddleware.js";
+
+
 const signInRouter = Router();
 
 signInRouter.post("/signin", 
     validacaoDadosLoginMiddleware,
     buscarUsuarioNoBancoMiddleware,
     validarSenhaMiddleware,
-    (req, res)=>{
-        res.sendStatus(200);
-    }
+    criarTokenUsuarioMiddleware,
+    signInController
 )
 
 export default signInRouter;
