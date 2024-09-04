@@ -14,7 +14,7 @@ export default async function criarTokenUsuarioMiddleware(req, res, next){
         delete copiaDadosUsuario.senha;
 
         // gerando token
-        const token = jwt.sign(copiaDadosUsuario, SENHA, { expiresIn : segundos });
+        const token = jwt.sign(copiaDadosUsuario, SENHA);
         
         //armazenando na reqs
         req.token = token;

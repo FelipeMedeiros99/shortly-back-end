@@ -7,8 +7,6 @@ export default async function armazenarTokenMiddleware(req, res, next){
         INSERT INTO autorizacao(idusuario, token)
         VALUES ($1, $2)
     `
-    
-
     try{
         await db.query(comandoQuery, valores)
         next();
