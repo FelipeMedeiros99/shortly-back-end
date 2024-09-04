@@ -10,7 +10,7 @@ export default async function signUpController(req, res){
     try{ 
         await db.query(
             inserirDadosQuery, 
-            [dados.nome, dados.email, dados.senha]
+            [dados.nome.toUpperCase(), dados.email.toLowerCase(), dados.senha]
         );
 
         res.sendStatus(201)

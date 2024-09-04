@@ -5,6 +5,7 @@ import cors from "cors";
 
 // local
 import signUpRouter from '../Routes/signUpRouter.js';
+import signInRouter from "./signInRouter.js";
 
 
 const rotaPrincipal = Router();
@@ -15,5 +16,6 @@ rotaPrincipal.use(cors());
 
 // rotas
 rotaPrincipal.use(signUpRouter);
+rotaPrincipal.use(signInRouter);
 
 export default rotaPrincipal;

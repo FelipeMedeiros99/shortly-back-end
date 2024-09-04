@@ -9,9 +9,10 @@ import criptografarSenhaMiddleware from "../Middlewares/criptografarSenhaMiddlew
 
 const signUpRouter = Router();
 
-signUpRouter.post("/signup", 
+signUpRouter.post(
+    "/signup", 
     validacaoDadosMiddleware,
-    criptografarSenhaMiddleware,    
+    criptografarSenhaMiddleware, 
     signUpController)
 
 
