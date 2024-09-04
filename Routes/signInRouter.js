@@ -7,6 +7,7 @@ import validacaoDadosLoginMiddleware from "../Middlewares/validacaoDadosLoginMid
 import validarSenhaMiddleware from "../Middlewares/validarSenhaMiddleware.js";
 import signInController from "../Controllers/signInController.js";
 import criarTokenUsuarioMiddleware from "../Middlewares/criarTokenUsuarioMiddleware.js";
+import armazenarTokenMiddleware from "../Middlewares/armazenarTokenMiddleware.js";
 
 
 const signInRouter = Router();
@@ -16,6 +17,7 @@ signInRouter.post("/signin",
     buscarUsuarioNoBancoMiddleware,
     validarSenhaMiddleware,
     criarTokenUsuarioMiddleware,
+    armazenarTokenMiddleware,
     signInController
 )
 
