@@ -8,7 +8,7 @@ export default async function signUpController(req, res){
             VALUES($1, $2, $3)
         `
     try{ 
-        const resposta = await db.query(
+        await db.query(
             inserirDadosQuery, 
             [dados.nome, dados.email, dados.senha]
         );

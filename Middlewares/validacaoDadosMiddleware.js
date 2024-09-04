@@ -8,7 +8,7 @@ async function validacaoDadosMiddleware(req, res, next){
         next();
     }catch(e){
         const erro = filtroErros(e);
-        res.status(404).send(erro||e);
+        res.status(422).send(erro||e);
     }
 };
 
