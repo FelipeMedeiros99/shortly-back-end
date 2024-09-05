@@ -7,7 +7,13 @@ export default async function validarTokenUsuarioMiddleware(req, res, next){
         WHERE token = $1
         LIMIT 1
     `
-    const token = headers?.authorization.replace("Bearer", "").trim()
+
+    let token = headers?.authorization
+    if(!token.includes("Bearer")){
+        return res.status(400).send(`Token precisa estar no formato "Bearer token"`)
+    }
+    token = token.replace("Bearer", "").trim()
+
 
     try{
         const localizarToken = await db.query(localizarTokenNoBanco, [token]);
