@@ -7,8 +7,6 @@ import shortenController from "../Controllers/shortenController.js";
 import validarTokenUsuarioMiddleware from "../Middlewares/validarTokenUsuarioMiddleware.js";
 
 
-//TODO: VALIDAR CREDENCIAIS DO USUÁRIO (TOKEN)
-
 const shortenRouter = Router();
 
 shortenRouter.post("/urls/shorten", 

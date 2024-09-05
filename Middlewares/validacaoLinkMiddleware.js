@@ -9,6 +9,6 @@ export default async function validacaoLinkMiddleware(req, res, next){
         next()
     }catch(e){
         const erro = filtroErros(e);
-        res.status(400).send(erro||e);
+        res.status(422).send(erro||e);
     }
 };

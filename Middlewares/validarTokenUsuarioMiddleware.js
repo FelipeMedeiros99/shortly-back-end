@@ -11,10 +11,11 @@ export default async function validarTokenUsuarioMiddleware(req, res, next){
 
     try{
         const localizarToken = await db.query(localizarTokenNoBanco, [token]);
-        const dadosUsuario = localizarToken.rows[0]
+        const dadosUsuario = localizarToken.rows[0];
+        req.dadosUsuario = dadosUsuario
 
         if(dadosUsuario === undefined){
-            return res.status(401).send("Seu token expirou, faça login novamente!")
+            return res.status(401).send("Seu token expirou, faça login novamente!");
         }
 
         next();
