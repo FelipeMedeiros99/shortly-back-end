@@ -7,7 +7,6 @@ export default async function validacaoLinkMiddleware(req, res, next){
     try{
         await linkSchema.validateAsync(link);
         next()
-
     }catch(e){
         const erro = filtroErros(e);
         res.status(400).send(erro||e);
