@@ -9,7 +9,7 @@ export default async function validarTokenUsuarioMiddleware(req, res, next){
     `
 
     let token = headers?.authorization
-    if(!token.includes("Bearer")){
+    if(!(token?.includes("Bearer"))){
         return res.status(400).send(`Token precisa estar no formato "Bearer token"`)
     }
     token = token.replace("Bearer", "").trim()

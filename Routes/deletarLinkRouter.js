@@ -2,16 +2,15 @@
 import { Router } from "express";
 
 // interno
-import buscarLinkController from "../Controllers/buscarLinkController.js";
-import localizarLinkMiddleware from "../Middlewares/localizarLinkMiddleware.js";
 import validarTokenUsuarioMiddleware from "../Middlewares/validarTokenUsuarioMiddleware.js";
+import deletarLinkController from "../Controllers/deletarLinkController.js";
 
 
 const deletarLinkRouter = Router();
 
-deletarLinkRouter.delete("/urls/:id", 
+deletarLinkRouter.delete(
+    "/urls/:id", 
     validarTokenUsuarioMiddleware,
-    localizarLinkMiddleware,
-    buscarLinkController)
+    deletarLinkController)
 
 export default deletarLinkRouter;
