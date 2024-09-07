@@ -10,6 +10,7 @@ import shortenRouter from "./shortenRouter.js";
 import buscarLinkRouter from "./buscarLinkRouter.js";
 import deletarLinkRouter from "./deletarLinkRouter.js";
 import abrirLinkRouter from "./abrirLinkRouter.js";
+import rankingRouter from "./rankingRouter.js"
 
 const mainRouter = Router();
 
@@ -24,5 +25,6 @@ mainRouter.use(shortenRouter);
 mainRouter.use(buscarLinkRouter);
 mainRouter.use(deletarLinkRouter);
 mainRouter.use(abrirLinkRouter);
+mainRouter.use(rankingRouter);
 
 export default mainRouter;
