@@ -2,13 +2,13 @@
 import express from 'express';
 
 // interno
-import rotaPrincipal from './Routes/rotaPrincipal.js';
+import mainRouter from './Routes/mainRouter.js';
 import removerTokensInativos from './Utils/removerTokensInativos.js';
 
 const App = express();
 
 // configuração de rota
-App.use(rotaPrincipal);
+App.use(mainRouter);
 
 // remover token inativos a cada 1 minuto
 setInterval(removerTokensInativos, 1000*60);

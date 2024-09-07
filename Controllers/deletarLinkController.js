@@ -18,7 +18,7 @@ export default async function deletarLinkController(req, res, next){
         if(respostaBanco.rows[0] === undefined){
             return res.status(401).send("Você não possui permissão para remover este link")
         }
-        next();
+        res.sendStatus(204)
     
     }catch(e){
         res.status(400).send(`Erro ao tentar deletar link: ${e}`)
