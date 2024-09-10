@@ -11,6 +11,7 @@ import buscarLinkRouter from "./buscarLinkRouter.js";
 import deletarLinkRouter from "./deletarLinkRouter.js";
 import abrirLinkRouter from "./abrirLinkRouter.js";
 import rankingRouter from "./rankingRouter.js"
+import informacoesUsuarioRouter from "./informacoesUsuarioRouter.js";
 
 const mainRouter = Router();
 
@@ -26,5 +27,6 @@ mainRouter.use(buscarLinkRouter);
 mainRouter.use(deletarLinkRouter);
 mainRouter.use(abrirLinkRouter);
 mainRouter.use(rankingRouter);
+mainRouter.use(informacoesUsuarioRouter);
 
 export default mainRouter;
